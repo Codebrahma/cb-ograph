@@ -3,6 +3,10 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
+.container{
+  max-width: 1150px !important;
+}
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -90,3 +94,20 @@ body {
     border-bottom: 0;
   }
 }
+
+.graph-container{
+  border: solid 1px #ccc;
+  background-color: white;
+}
+
+.login-container{
+  border: solid 1px #ccc;
+  min-height: 300px;
+  margin-bottom: 50px;
+  padding: 20px 50px;
+}
+
+.login-container .btn{
+  margin-top: 50px;
+}
+
