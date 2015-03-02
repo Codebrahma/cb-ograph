@@ -10,7 +10,8 @@ angular.module("tg.graph")
       metadata: "&",
       nodeMenu: "&",
       edgeMenu: "&",
-      onLoad: "&"
+      onLoad: "&",
+      helpers: "=?",
     },
     link: function($scope, element, attrs){
       function loadGraph(){
@@ -27,6 +28,12 @@ angular.module("tg.graph")
         if($scope.onLoad){
           $scope.onLoad({ graph: $scope.graph });
         };
+      };
+
+      $scope.helpers = {
+        fullScreen: function(){
+          $scope.graph.fullScreen(element[0]);
+        }
       };
 
       loadGraph();

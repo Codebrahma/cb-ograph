@@ -100,6 +100,15 @@ body {
   background-color: white;
 }
 
+.graph-panel{
+  margin-bottom: 20px;
+  background: rgb(53, 53, 53);
+
+  .btn{
+    border-radius: 0px;
+  }
+}
+
 .login-container{
   border: solid 1px #ccc;
   min-height: 300px;

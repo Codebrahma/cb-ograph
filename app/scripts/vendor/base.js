@@ -14,6 +14,7 @@ var gViz = (function(){
 
   var configration = {
     height: 500,
+    width: 1100,
     classes: { },
     node: {
       r: 30

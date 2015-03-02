@@ -213,17 +213,24 @@ gViz.Engine = (function(defaultConfig, behavior, merger, Vertex, Edge, VertexMen
       }
     };
 
-    this.fullScreen = function(full){
-      if(full){
-        var start = $(this.originElement).offset().top;
-        var wHeight = $(document).height();
-        var height = wHeight - start;
-        this.svgContainer
-          .attr('height', height)
-      } else {
-        this.svgContainer
-          .attr('height', self.config.height)
-      };
+    this.fullScreen = function(element){
+      var handleScreenSizeChange = function(){
+        if(window.fullScreenApi.isFullScreen()){
+          var height = $(document).height();
+          var width = $(document).width();
+          this.svgContainer
+            .attr('height', height)
+            .attr('width', width);
+        } else {
+          this.svgContainer
+            .attr('height', self.config.height)
+            .attr('width', self.config.width);
+        };
+      }.bind(this);
+
+      window.fullScreenApi.onScreenSizeChange(handleScreenSizeChange);
+
+      $(element).requestFullScreen();
     };
 
     this.setSelected = function(v){
