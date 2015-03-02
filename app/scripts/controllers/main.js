@@ -99,20 +99,35 @@ angular.module('graphTestApp')
   $timeout(function(){
     //initial data
     $scope.dataStream = [
-      {"id":"#9:1","type":"Simple", "name": "Feedback"},
-      {"id":"#9:1-1","type":"Simple", "name": "Customer rating"},
-      {"id":"#9:1-2","type":"Simple", "name": "Delivery time"},
-      {"id":"#9:1-3","type":"Simple", "name": "Shipping option"},
-      {"id":"#9:1-4","type":"Simple", "name": "Payment method"},
-      {"id":"#9:2","type":"Group", "name": "Order Type"},
-      {"id":"#9:3","type":"Derived", "name": "Order Date"},
-      {"type": "has_many", "in": "#9:1", "out": "#9:2" },
-      {"type": "refers", "in": "#9:3", "out": "#9:1" },
-      {"type": "has_many", "in": "#9:3", "out": "#9:4" },
-      {"type": "refers", "in": "#9:1", "out": "#9:1-1" },
-      {"type": "refers", "in": "#9:1", "out": "#9:1-2" },
-      {"type": "refers", "in": "#9:1", "out": "#9:1-3" },
-      {"type": "refers", "in": "#9:1", "out": "#9:1-4" },
+
+      {"id":"#1","type":"Bevy", "name": "Bevy"},
+      {"id":"#2","type":"Bevy-Android", "name": "Bevy-Android"},
+      {"id":"#3","type":"Ether", "name": "Ether"},
+
+      {"id":"#E-1","type":"Employee", "name": "Anand Narayanan"},
+      {"id":"#E-2","type":"Employee", "name": "Abhishek Sarkar"},
+      {"id":"#E-3","type":"Employee", "name": "Nithin Krishna"},
+      {"id":"#E-4","type":"Employee", "name": "Marudhu Pandian"},
+      {"id":"#E-5","type":"Employee", "name": "Kameshwaran"},
+      {"id":"#E-6","type":"Employee", "name": "Gaurav sharma"},
+      {"id":"#E-7","type":"Employee", "name": "Punit Gupta"},
+      {"id":"#E-8","type":"Employee", "name": "Balram Kitchar"},
+      {"id":"#E-9","type":"Employee", "name": "Arjun SNA"},
+      {"id":"#E-10","type":"Employee", "name": "Vijay Karthik"},
+
+      {"type": "oversees", "out": "#E-1", "in": "#1" },
+      {"type": "oversees", "out": "#E-1", "in": "#2" },
+      {"type": "oversees", "out": "#E-1", "in": "#3" },
+      {"type": "consults", "out": "#E-5", "in": "#1" },
+      {"type": "manages", "out": "#E-2", "in": "#1" },
+      {"type": "engineers", "out": "#E-6", "in": "#1" },
+      {"type": "engineers", "out": "#E-7", "in": "#1" },
+      {"type": "engineers", "out": "#E-8", "in": "#1" },
+      {"type": "manages", "out": "#E-4", "in": "#2" },
+      {"type": "engineers", "out": "#E-9", "in": "#2" },
+      {"type": "consults", "out": "#E-5", "in": "#2" },
+      {"type": "consults", "out": "#E-3", "in": "#3" },
+      {"type": "engineers", "out": "#E-10", "in": "#3" },
     ];
   });
 }]);

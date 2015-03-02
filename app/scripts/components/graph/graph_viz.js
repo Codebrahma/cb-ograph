@@ -4,7 +4,7 @@ angular.module("tg.graph")
   var Visualizer = gViz;
 
   Visualizer.setup({
-    defaultType: "Concept",
+    defaultType: "Unknown",
     vertextIdentifier: "id",
     typeIdentifier: "type"
   });
